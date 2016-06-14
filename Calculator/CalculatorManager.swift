@@ -11,11 +11,14 @@ import UIKit
 class CalculatorManager: NSObject {
     static let shareInstance = CalculatorManager()
     
-    private(set) internal var result = NSNumber()
+    var lastEnterCommand = ActionType.None
+    
+    private(set) internal var secondEnteredValue = NSDecimalNumber.zero()
+    private(set) internal var result = NSDecimalNumber.zero()
     
     func numberFormatter() -> NSNumberFormatter {
         let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        formatter.numberStyle = NSNumberFormatterStyle.NoStyle
         formatter.minimumIntegerDigits = 1
         
         return formatter
@@ -28,15 +31,35 @@ class CalculatorManager: NSObject {
         
     }
     
-    func appendValue(value: String) {
-        let formatter = self.numberFormatter()
-        if let resultStr = self.resultToString() {
-            if value == formatter.decimalSeparator {
-                if resultStr.containsString(formatter.decimalSeparator) {
-                   return
+    func appendValue(value: String?) {
+        if let value = value {
+            let formatter = self.numberFormatter()
+            
+            var resultStr = ""
+            if self.lastEnterCommand == ActionType.None {
+                if let result = formatter.stringFromNumber(self.result) {
+                    resultStr = result;
+                }
+            }
+            else {
+                if let result = formatter.stringFromNumber(self.secondEnteredValue) {
+                    resultStr = result;
                 }
             }
             
+            if value == formatter.decimalSeparator {
+                if resultStr.containsString(formatter.decimalSeparator) {
+                    return
+                }
+            }
+            resultStr += value;
+            
+            if self.lastEnterCommand == ActionType.None {
+                self.result = NSDecimalNumber(string: resultStr);
+            }
+            else {
+                self.secondEnteredValue = NSDecimalNumber(string: resultStr);
+            }
         }
     }
     
