@@ -15,6 +15,20 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         super.viewDidLoad()
         
     }
+    
+    // MARK: - Orientation methods
+    
+    override func shouldAutorotate () -> (Bool) {
+        return true
+    }
+    
+    override func supportedInterfaceOrientations () -> (UIInterfaceOrientationMask) {
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
+    override func preferredInterfaceOrientationForPresentation () -> (UIInterfaceOrientation) {
+        return UIInterfaceOrientation.Portrait
+    }
 
     func action(sender: CalculatorButtonView) {
         if sender.type == ActionType.Value {
@@ -31,7 +45,7 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         let formatter = CalculatorManager.shareInstance.numberFormatter()
         
         if CalculatorManager.shareInstance.lastEnterCommand == ActionType.None {
-            self.calculatorResultLabel?.text = formatter.stringFromNumber(CalculatorManager.shareInstance.result)
+            self.calculatorResultLabel?.text = CalculatorManager.shareInstance.result.stringValue
         } else {
             self.calculatorResultLabel?.text = formatter.stringFromNumber(CalculatorManager.shareInstance.secondEnteredValue)
         }

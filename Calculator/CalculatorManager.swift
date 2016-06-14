@@ -18,8 +18,10 @@ class CalculatorManager: NSObject {
     
     func numberFormatter() -> NSNumberFormatter {
         let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.NoStyle
-        formatter.minimumIntegerDigits = 1
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        formatter.formatterBehavior = NSNumberFormatterBehavior.BehaviorDefault
+        formatter.generatesDecimalNumbers = true
+//        formatter.minimumIntegerDigits = 1
         
         return formatter
     }
@@ -35,10 +37,19 @@ class CalculatorManager: NSObject {
         if let value = value {
             let formatter = self.numberFormatter()
             
+            if value == formatter.decimalSeparator {
+//                if self.lastEnterCommand == ActionType.None {
+//                    self.result = self.result.decimalNumberByMultiplyingBy(NSDecimalNumber(string: "1.0"))
+//                }
+//                else {
+//                    self.secondEnteredValue = self.secondEnteredValue.decimalNumberByMultiplyingBy(NSDecimalNumber(string: "1.0"), withBehavior: nil)
+//                }
+            }
+            
             var resultStr = ""
             if self.lastEnterCommand == ActionType.None {
                 if let result = formatter.stringFromNumber(self.result) {
-                    resultStr = result;
+                    resultStr = self.result.stringValue + ".0"
                 }
             }
             else {
@@ -46,13 +57,7 @@ class CalculatorManager: NSObject {
                     resultStr = result;
                 }
             }
-            
-            if value == formatter.decimalSeparator {
-                if resultStr.containsString(formatter.decimalSeparator) {
-                    return
-                }
-            }
-            resultStr += value;
+            resultStr += value
             
             if self.lastEnterCommand == ActionType.None {
                 self.result = NSDecimalNumber(string: resultStr);
