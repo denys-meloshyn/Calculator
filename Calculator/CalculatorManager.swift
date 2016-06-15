@@ -13,7 +13,7 @@ class CalculatorManager: NSObject {
     
     var lastEnterCommand = ActionType.None {
         didSet {
-            if let _ = self.calculationError {
+            if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError {
                 lastEnterCommand = ActionType.None
             }
         }
@@ -196,7 +196,7 @@ class CalculatorManager: NSObject {
                 self.calculationError = nil
             }
             else {
-                if let _ = self.calculationError {
+                if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError{
                     self.lastEnterCommand = ActionType.None;
                     self.secondEnteredValue = nil;
                 }
