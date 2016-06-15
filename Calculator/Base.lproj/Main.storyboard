@@ -20,37 +20,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQD-2G-iXi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="320.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="321"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xf1-fD-IdP">
-                                        <rect key="frame" x="15" y="8" width="384" height="312.5"/>
+                                        <rect key="frame" x="15" y="8" width="384" height="313"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="69"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqs-UF-LgG">
+                                        <rect key="frame" x="15" y="138.5" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="YrP-ft-8ua"/>
+                                            <constraint firstAttribute="height" constant="44" id="tWF-Nk-Bf3"/>
+                                        </constraints>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="clear" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pr-oK-5dD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Hqs-UF-LgG" firstAttribute="centerY" secondItem="xQD-2G-iXi" secondAttribute="centerY" id="32h-qz-dZP"/>
                                     <constraint firstItem="Xf1-fD-IdP" firstAttribute="top" secondItem="xQD-2G-iXi" secondAttribute="top" constant="8" id="9SF-Wf-vfM"/>
                                     <constraint firstAttribute="bottom" secondItem="Xf1-fD-IdP" secondAttribute="bottom" id="EcG-6z-2SA"/>
+                                    <constraint firstItem="Xf1-fD-IdP" firstAttribute="leading" secondItem="xQD-2G-iXi" secondAttribute="leading" constant="15" id="GY6-BP-CBT"/>
+                                    <constraint firstItem="Hqs-UF-LgG" firstAttribute="leading" secondItem="xQD-2G-iXi" secondAttribute="leading" constant="15" id="Qyk-gs-nU5"/>
                                     <constraint firstAttribute="trailing" secondItem="Xf1-fD-IdP" secondAttribute="trailing" constant="15" id="jIe-f0-QXo"/>
-                                    <constraint firstItem="Xf1-fD-IdP" firstAttribute="leading" secondItem="xQD-2G-iXi" secondAttribute="leading" constant="15" id="qez-4d-IZ8"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-dr-431">
-                                <rect key="frame" x="0.0" y="320.5" width="414" height="415.5"/>
+                                <rect key="frame" x="0.0" y="321" width="414" height="415"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-jv-dgM" userLabel="0" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="312" width="207" height="104"/>
+                                        <rect key="frame" x="0.0" y="312" width="207" height="103.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juF-iv-vuQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="103.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="103"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-Oa-mX8">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="103.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="103"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="F6V-jv-dgM" eventType="touchUpInside" id="B8u-3d-xK2"/>
                                                 </connections>
@@ -149,7 +162,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQt-PL-626" userLabel="/" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="312" width="104" height="104"/>
+                                        <rect key="frame" x="207" y="311.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jQ-zC-qgo">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
@@ -221,7 +234,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWl-Aw-2qy" userLabel="3" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="208" width="104" height="104"/>
+                                        <rect key="frame" x="208" y="207.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-81-SsL">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -329,7 +342,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-m2-YZW" userLabel="6" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="207.5" y="104.5" width="104" height="104"/>
+                                        <rect key="frame" x="207.5" y="104" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-Pu-Epd">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -365,7 +378,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-HT-p0f" userLabel="8" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="104" y="1" width="104" height="104"/>
+                                        <rect key="frame" x="104" y="0.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Z-ZZ-Tmt">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
@@ -401,7 +414,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-NW-0VG" userLabel="9" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="1" width="104" height="104"/>
+                                        <rect key="frame" x="208" y="0.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-YI-niZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
@@ -437,7 +450,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wey-72-9uS" userLabel="X" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="312" y="0.0" width="102" height="104"/>
+                                        <rect key="frame" x="312" y="0.5" width="102" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUK-ko-dZs">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="104"/>
@@ -472,7 +485,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tS-oA-3TD" userLabel="-" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="311.5" y="104" width="102.5" height="104"/>
+                                        <rect key="frame" x="311.5" y="104.5" width="102.5" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-pI-eSj">
                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
@@ -507,16 +520,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-lM-mhp" userLabel="+" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="311.5" y="208" width="102.5" height="104"/>
+                                        <rect key="frame" x="311.5" y="208.5" width="102.5" height="103.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-4C-UvX">
-                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="103.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-1j-9FQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="103.5"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="YX8-lM-mhp" eventType="touchUpInside" id="98Z-Sr-j9y"/>
                                                 </connections>
@@ -542,16 +555,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4i-n4-mS3" userLabel="=" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="311" y="312" width="103" height="103.5"/>
+                                        <rect key="frame" x="311" y="312" width="103" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsT-AS-c3P">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73h-Vt-gGM">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="u4i-n4-mS3" eventType="touchUpInside" id="lIl-8A-PCo"/>
                                                 </connections>
@@ -590,7 +603,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Cw-RpM">
-                                        <rect key="frame" x="208" y="0.0" width="1" height="415.5"/>
+                                        <rect key="frame" x="208" y="0.0" width="1" height="415"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="iCe-WC-oUh"/>
@@ -603,7 +616,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L65-80-WMP">
-                                        <rect key="frame" x="311.5" y="0.0" width="1" height="415.5"/>
+                                        <rect key="frame" x="311.5" y="0.0" width="1" height="415"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="3Lm-1F-fPX"/>
@@ -616,7 +629,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-GZ-cVj">
-                                        <rect key="frame" x="0.0" y="104" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="414" height="1"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="DL8-xm-zIR"/>
@@ -631,7 +644,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YR6-kt-lId">
-                                        <rect key="frame" x="0.0" y="208" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="208.5" width="414" height="1"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Fdl-Oo-Ihb"/>

@@ -79,4 +79,27 @@ class CalculatorTests: XCTestCase {
         
         XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSCalculationError.NoError)
     }
+    
+    func testDividingMixedOperations() {
+        CalculatorManager.shareInstance.reset()
+        
+        var a = NSDecimalNumber(integer: 6)
+        let b = NSDecimalNumber(integer: 100)
+        var c = NSDecimalNumber.zero()
+        c = CalculatorManager.shareInstance.add(a, secondValue: b)
+        
+        a = NSDecimalNumber(integer: -200)
+        c = CalculatorManager.shareInstance.add(c, secondValue: a)
+        
+        a = NSDecimalNumber(integer: -2)
+        c = CalculatorManager.shareInstance.dividing(c, secondValue: a)
+        
+        a = NSDecimalNumber(double: 100.5)
+        c = CalculatorManager.shareInstance.multiplying(c, secondValue: a)
+        
+        let result = NSDecimalNumber(double: 4723.5)
+        
+        XCTAssertEqual(c, result)
+    }
+
 }

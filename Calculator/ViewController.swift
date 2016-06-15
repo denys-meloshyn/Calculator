@@ -11,11 +11,6 @@ import UIKit
 class ViewController: UIViewController, CalculatorButtonDelegate {
     @IBOutlet private var calculatorResultLabel: UILabel?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     // MARK: - Orientation methods
     
     override func shouldAutorotate () -> (Bool) {
@@ -29,7 +24,9 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
     override func preferredInterfaceOrientationForPresentation () -> (UIInterfaceOrientation) {
         return UIInterfaceOrientation.Portrait
     }
-
+    
+    // MARK: - CalculatorButtonDelegate methds
+    
     func action(sender: CalculatorButtonView) {
         switch sender.type {
         case ActionType.Value:
@@ -50,8 +47,15 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         }
     }
     
-    func updateCalculatorLabel() {
+    // MARK: - Private methods
+    
+    private func updateCalculatorLabel() {
         self.calculatorResultLabel?.text = CalculatorManager.shareInstance.string()
+    }
+    
+    @IBAction func clear() {
+        CalculatorManager.shareInstance.reset()
+        self.updateCalculatorLabel()
     }
 }
 
