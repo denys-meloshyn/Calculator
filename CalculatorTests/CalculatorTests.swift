@@ -21,16 +21,62 @@ class CalculatorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAdd() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 2)
+        let b = NSDecimalNumber(integer: 3)
+        let c = NSDecimalNumber(integer: 5)
+        
+        let result = CalculatorManager.shareInstance.add(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testSubtracting() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 2)
+        let b = NSDecimalNumber(integer: 3)
+        let c = NSDecimalNumber(integer: -1)
+        
+        let result = CalculatorManager.shareInstance.subtracting(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
     }
     
+    func testMultiplying() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 2)
+        let b = NSDecimalNumber(integer: 3)
+        let c = NSDecimalNumber(integer: 6)
+        
+        let result = CalculatorManager.shareInstance.multiplying(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testDividing() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 6)
+        let b = NSDecimalNumber(integer: 3)
+        let c = NSDecimalNumber(integer: 2)
+        
+        let result = CalculatorManager.shareInstance.dividing(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testDividingByZero() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 6)
+        let b = NSDecimalNumber(integer: 0)
+        
+        CalculatorManager.shareInstance.dividing(a, secondValue: b)
+        
+        XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSCalculationError.NoError)
+    }
 }

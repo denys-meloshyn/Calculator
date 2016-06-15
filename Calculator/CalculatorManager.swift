@@ -27,6 +27,13 @@ class CalculatorManager: NSObject {
     private override init() {
     }
     
+    internal func reset() {
+        self.lastEnterCommand = ActionType.None
+        self.calculationError = nil
+        self.result = NSDecimalNumber.zero()
+        self.secondEnteredValue = nil
+    }
+    
     func add(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         var result = NSDecimalNumber.zero()
         
