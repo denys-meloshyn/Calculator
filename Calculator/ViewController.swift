@@ -34,6 +34,7 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         switch sender.type {
         case ActionType.Value:
             CalculatorManager.shareInstance.appendValue(sender.titleLabel?.text)
+            self.updateCalculatorLabel()
             break
             
         case ActionType.Add, ActionType.Subtracting, ActionType.Multiplying, ActionType.Dividing:
@@ -47,8 +48,6 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         default:
             break
         }
-        
-        self.updateCalculatorLabel()
     }
     
     func updateCalculatorLabel() {

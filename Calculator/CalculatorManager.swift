@@ -13,6 +13,7 @@ class CalculatorManager: NSObject {
     
     var lastEnterCommand = ActionType.None {
         didSet {
+            // Avoid entering new math command if we have error
             if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError {
                 lastEnterCommand = ActionType.None
             }
@@ -29,30 +30,34 @@ class CalculatorManager: NSObject {
     func add(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         var result = NSDecimalNumber.zero()
         
+        // Check if first parameter is exist
         if let firstValue = firstValue {
-            if let secondValue = secondValue {
-                var first = firstValue.decimalValue
-                var second = secondValue.decimalValue
-                var decimalReuslt = self.result.decimalValue
-                
-                self.calculationError = NSDecimalAdd(&decimalReuslt, &first, &second, NSRoundingMode.RoundPlain)
-                
-                if let calculationError = self.calculationError {
-                    switch calculationError {
-                    case NSCalculationError.NoError:
-                        self.result = NSDecimalNumber.zero()
-                        self.secondEnteredValue = NSDecimalNumber.zero()
-                        self.lastEnterCommand = ActionType.None
-                        
-                        result = firstValue.decimalNumberByAdding(secondValue)
-                        break;
-                    default:
-                        break;
-                    }
-                }
+            var secondValueInput = firstValue.decimalValue
+            
+            // Check if second parameter is exist
+            if let checkSecondValue = secondValue {
+                secondValueInput = checkSecondValue.decimalValue
             }
-            else {
-                result = firstValue.decimalNumberByAdding(result)
+            
+            // Convert NSDecimalNumber's to NSDecimal
+            var first = firstValue.decimalValue
+            var decimalReuslt = self.result.decimalValue
+            
+            // Try to execute command and check error status
+            self.calculationError = NSDecimalAdd(&decimalReuslt, &first, &secondValueInput, NSRoundingMode.RoundPlain)
+            
+            if let calculationError = self.calculationError {
+                switch calculationError {
+                case NSCalculationError.NoError:
+                    self.secondEnteredValue = NSDecimalNumber.zero()
+                    self.lastEnterCommand = ActionType.None
+                    
+                    result = NSDecimalNumber(decimal: decimalReuslt)
+                    break;
+                default:
+                    self.result = NSDecimalNumber.zero()
+                    break;
+                }
             }
         }
         
@@ -62,31 +67,37 @@ class CalculatorManager: NSObject {
     func subtracting(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         var result = NSDecimalNumber.zero()
         
+        // Check if first parameter is exist
         if let firstValue = firstValue {
-            if let secondValue = secondValue {
-                var first = firstValue.decimalValue
-                var second = secondValue.decimalValue
-                var decimalReuslt = self.result.decimalValue
-                
-                self.calculationError = NSDecimalSubtract(&decimalReuslt, &first, &second, NSRoundingMode.RoundPlain)
-                
-                if let calculationError = self.calculationError {
-                    switch calculationError {
-                    case NSCalculationError.NoError:
-                        self.result = NSDecimalNumber.zero()
-                        self.secondEnteredValue = NSDecimalNumber.zero()
-                        self.lastEnterCommand = ActionType.None
-                        
-                        result = firstValue.decimalNumberBySubtracting(secondValue)
-                        break;
-                    default:
-                        break;
-                    }
+            var secondValueInput = firstValue.decimalValue
+            
+            // Check if second parameter is exist
+            if let checkSecondValue = secondValue {
+                secondValueInput = checkSecondValue.decimalValue
+            }
+            
+            // Convert NSDecimalNumber's to NSDecimal
+            var first = firstValue.decimalValue
+            var decimalReuslt = self.result.decimalValue
+            
+            // Try to execute command and check error status
+            self.calculationError = NSDecimalSubtract(&decimalReuslt, &first, &secondValueInput, NSRoundingMode.RoundPlain)
+            
+            if let calculationError = self.calculationError {
+                switch calculationError {
+                case NSCalculationError.NoError:
+                    self.secondEnteredValue = NSDecimalNumber.zero()
+                    self.lastEnterCommand = ActionType.None
+                    
+                    result = NSDecimalNumber(decimal: decimalReuslt)
+                    break;
+                    
+                default:
+                    self.result = NSDecimalNumber.zero()
+                    break;
                 }
             }
-            else {
-                result = firstValue.decimalNumberBySubtracting(result)
-            }
+
         }
         
         return result
@@ -95,30 +106,35 @@ class CalculatorManager: NSObject {
     func multiplying(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         var result = NSDecimalNumber.zero()
         
+        // Check if first parameter is exist
         if let firstValue = firstValue {
-            if let secondValue = secondValue {
-                var first = firstValue.decimalValue
-                var second = secondValue.decimalValue
-                var decimalReuslt = self.result.decimalValue
-                
-                self.calculationError = NSDecimalMultiply(&decimalReuslt, &first, &second, NSRoundingMode.RoundPlain)
-                
-                if let calculationError = self.calculationError {
-                    switch calculationError {
-                    case NSCalculationError.NoError:
-                        self.result = NSDecimalNumber.zero()
-                        self.secondEnteredValue = NSDecimalNumber.zero()
-                        self.lastEnterCommand = ActionType.None
-                        
-                        result = firstValue.decimalNumberByMultiplyingBy(secondValue)
-                        break;
-                    default:
-                        break;
-                    }
-                }
+            var secondValueInput = firstValue.decimalValue
+            
+            // Check if second parameter is exist
+            if let checkSecondValue = secondValue {
+                secondValueInput = checkSecondValue.decimalValue
             }
-            else {
-                result = firstValue.decimalNumberByMultiplyingBy(result)
+            
+            // Convert NSDecimalNumber's to NSDecimal
+            var first = firstValue.decimalValue
+            var decimalReuslt = self.result.decimalValue
+            
+            // Try to execute command and check error status
+            self.calculationError = NSDecimalMultiply(&decimalReuslt, &first, &secondValueInput, NSRoundingMode.RoundPlain)
+            
+            if let calculationError = self.calculationError {
+                switch calculationError {
+                case NSCalculationError.NoError:
+                    self.secondEnteredValue = NSDecimalNumber.zero()
+                    self.lastEnterCommand = ActionType.None
+                    
+                    result = NSDecimalNumber(decimal: decimalReuslt)
+                    break;
+                    
+                default:
+                    self.result = NSDecimalNumber.zero()
+                    break;
+                }
             }
         }
         
@@ -128,29 +144,35 @@ class CalculatorManager: NSObject {
     func dividing(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         var result = NSDecimalNumber.zero()
         
+        // Check if first parameter is exist
         if let firstValue = firstValue {
+            // Check if second parameter is exist
             if let secondValue = secondValue {
+                // Convert NSDecimalNumber's to NSDecimal
                 var first = firstValue.decimalValue
                 var second = secondValue.decimalValue
                 var decimalReuslt = self.result.decimalValue
                 
+                // Try to execute command and check error status
                 self.calculationError = NSDecimalDivide(&decimalReuslt, &first, &second, NSRoundingMode.RoundPlain)
                 
                 if let calculationError = self.calculationError {
                     switch calculationError {
                     case NSCalculationError.NoError:
-                        self.result = NSDecimalNumber.zero()
                         self.secondEnteredValue = NSDecimalNumber.zero()
                         self.lastEnterCommand = ActionType.None
                         
-                        result = firstValue.decimalNumberByDividingBy(secondValue)
+                        result = NSDecimalNumber(decimal: decimalReuslt)
                         break;
+                        
                     default:
+                        self.result = NSDecimalNumber.zero()
                         break;
                     }
                 }
             }
             else {
+                // In this case result will be always equal to 1
                 return NSDecimalNumber(int: 1)
             }
         }
