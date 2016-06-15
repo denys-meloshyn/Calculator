@@ -53,6 +53,8 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
         self.calculatorResultLabel?.text = CalculatorManager.shareInstance.string()
     }
     
+    // MARK: - IBAction methods
+    
     @IBAction func clear() {
         CalculatorManager.shareInstance.reset()
         self.updateCalculatorLabel()
