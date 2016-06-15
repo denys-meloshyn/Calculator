@@ -13,7 +13,7 @@ class CalculatorManager: NSObject {
     
     var lastEnterCommand = ActionType.None
     
-    private(set) internal var secondEnteredValue = NSDecimalNumber.zero()
+    private(set) internal var secondEnteredValue: NSDecimalNumber?
     private(set) internal var result = NSDecimalNumber.zero()
     
     func numberFormatter() -> NSNumberFormatter {
@@ -29,32 +29,44 @@ class CalculatorManager: NSObject {
     private override init() {
     }
     
-    func add<T: Comparable>(x: T) {
+    func add(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
+        var result = NSDecimalNumber.zero()
         
+        if let firstValue = firstValue {
+            if let secondValue = secondValue {
+                result = firstValue.decimalNumberByAdding(secondValue)
+            }
+            else {
+                result = firstValue.decimalNumberByAdding(result)
+            }
+        }
+        
+        return result
+    }
+    
+    func calculate() {
+        switch self.lastEnterCommand {
+        case ActionType.Add:
+            self.result = self.add(self.result, secondValue: self.secondEnteredValue)
+            self.secondEnteredValue = nil
+            break
+        default:
+            break;
+        }
+        
+        self.lastEnterCommand = ActionType.None
     }
     
     func appendValue(value: String?) {
         if let value = value {
-            let formatter = self.numberFormatter()
-            
-            if value == formatter.decimalSeparator {
-//                if self.lastEnterCommand == ActionType.None {
-//                    self.result = self.result.decimalNumberByMultiplyingBy(NSDecimalNumber(string: "1.0"))
-//                }
-//                else {
-//                    self.secondEnteredValue = self.secondEnteredValue.decimalNumberByMultiplyingBy(NSDecimalNumber(string: "1.0"), withBehavior: nil)
-//                }
-            }
             
             var resultStr = ""
             if self.lastEnterCommand == ActionType.None {
-                if let result = formatter.stringFromNumber(self.result) {
-                    resultStr = self.result.stringValue + ".0"
-                }
+                resultStr = self.result.stringValue
             }
             else {
-                if let result = formatter.stringFromNumber(self.secondEnteredValue) {
-                    resultStr = result;
+                if let secondEnteredValue = self.secondEnteredValue {
+                    resultStr = secondEnteredValue.stringValue
                 }
             }
             resultStr += value
@@ -66,6 +78,20 @@ class CalculatorManager: NSObject {
                 self.secondEnteredValue = NSDecimalNumber(string: resultStr);
             }
         }
+    }
+    
+    func string() -> String {
+        var result = "0"
+        
+        if self.lastEnterCommand == ActionType.None {
+            result = CalculatorManager.shareInstance.result.stringValue
+        } else {
+            if let secondEnteredValue = self.secondEnteredValue {
+                result = secondEnteredValue.stringValue
+            }
+        }
+        
+        return result
     }
     
     private func resultToString() -> String? {

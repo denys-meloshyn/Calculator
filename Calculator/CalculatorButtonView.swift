@@ -15,6 +15,7 @@ enum ActionType: String {
     case Subtracting = "subtracting"
     case Multiplying = "multiplying"
     case Dividing = "dividing"
+    case Calculate = "calculate"
 };
 
 @objc public protocol CalculatorButtonDelegate {

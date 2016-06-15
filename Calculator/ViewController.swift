@@ -31,24 +31,28 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
     }
 
     func action(sender: CalculatorButtonView) {
-        if sender.type == ActionType.Value {
+        switch sender.type {
+        case ActionType.Value:
             CalculatorManager.shareInstance.appendValue(sender.titleLabel?.text)
-        }
-        else  {
+            break
+            
+        case ActionType.Add:
             CalculatorManager.shareInstance.lastEnterCommand = sender.type
+            break
+            
+        case ActionType.Calculate:
+            CalculatorManager.shareInstance.calculate()
+            self.updateCalculatorLabel()
+            break
+        default:
+            break
         }
         
         self.updateCalculatorLabel()
     }
     
     func updateCalculatorLabel() {
-        let formatter = CalculatorManager.shareInstance.numberFormatter()
-        
-        if CalculatorManager.shareInstance.lastEnterCommand == ActionType.None {
-            self.calculatorResultLabel?.text = CalculatorManager.shareInstance.result.stringValue
-        } else {
-            self.calculatorResultLabel?.text = formatter.stringFromNumber(CalculatorManager.shareInstance.secondEnteredValue)
-        }
+        self.calculatorResultLabel?.text = CalculatorManager.shareInstance.string()
     }
 }
 
