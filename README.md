@@ -7,6 +7,7 @@
 
 ## Possible improvements:
 - add possibility to enter float values
+- hihlight selected mathematical operator
 - add possibility to reverse sign of the value
 - add iPad support
 - add possibility to execute multiple arithmetic command in one line
