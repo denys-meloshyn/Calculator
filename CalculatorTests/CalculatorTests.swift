@@ -33,6 +33,28 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(c, result)
     }
     
+    func testAddNegative() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: -2)
+        let b = NSDecimalNumber(integer: -3)
+        let c = NSDecimalNumber(integer: -5)
+        
+        let result = CalculatorManager.shareInstance.add(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testAddToMaxNumber() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber.maximumDecimalNumber()
+        let b = NSDecimalNumber(integer: 1)
+        
+        CalculatorManager.shareInstance.add(a, secondValue: b)
+        XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSCalculationError.NoError)
+    }
+    
     func testSubtracting() {
         CalculatorManager.shareInstance.reset()
         
@@ -43,6 +65,28 @@ class CalculatorTests: XCTestCase {
         let result = CalculatorManager.shareInstance.subtracting(a, secondValue: b)
         
         XCTAssertEqual(c, result)
+    }
+    
+    func testSubtractingNegative() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: -2)
+        let b = NSDecimalNumber(integer: -3)
+        let c = NSDecimalNumber(integer: 1)
+        
+        let result = CalculatorManager.shareInstance.subtracting(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testSubtractingMinimum() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber.minimumDecimalNumber()
+        let b = NSDecimalNumber(integer: 1)
+        
+        CalculatorManager.shareInstance.subtracting(a, secondValue: b)
+        XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSCalculationError.NoError)
     }
     
     func testMultiplying() {
@@ -57,12 +101,48 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(c, result)
     }
     
+    func testMultiplyingNegative() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: -2)
+        let b = NSDecimalNumber(integer: -3)
+        let c = NSDecimalNumber(integer: 6)
+        
+        let result = CalculatorManager.shareInstance.multiplying(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
     func testDividing() {
         CalculatorManager.shareInstance.reset()
         
         let a = NSDecimalNumber(integer: 6)
         let b = NSDecimalNumber(integer: 3)
         let c = NSDecimalNumber(integer: 2)
+        
+        let result = CalculatorManager.shareInstance.dividing(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testDividingNegative() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: -6)
+        let b = NSDecimalNumber(integer: -3)
+        let c = NSDecimalNumber(integer: 2)
+        
+        let result = CalculatorManager.shareInstance.dividing(a, secondValue: b)
+        
+        XCTAssertEqual(c, result)
+    }
+    
+    func testDividingZeroByNumber() {
+        CalculatorManager.shareInstance.reset()
+        
+        let a = NSDecimalNumber(integer: 0)
+        let b = NSDecimalNumber(integer: 6)
+        let c = NSDecimalNumber(integer: 0)
         
         let result = CalculatorManager.shareInstance.dividing(a, secondValue: b)
         
