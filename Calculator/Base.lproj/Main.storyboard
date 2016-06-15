@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQD-2G-iXi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="90.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="320.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xf1-fD-IdP">
-                                        <rect key="frame" x="15" y="8" width="384" height="82.5"/>
+                                        <rect key="frame" x="15" y="8" width="384" height="312.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="69"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-dr-431">
-                                <rect key="frame" x="0.0" y="90.5" width="414" height="645.5"/>
+                                <rect key="frame" x="0.0" y="320.5" width="414" height="415.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-jv-dgM" userLabel="0" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="542" width="207" height="103.5"/>
+                                        <rect key="frame" x="0.0" y="312" width="207" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juF-iv-vuQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="103.5"/>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hua-5H-OA0" userLabel="1" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="438" width="104" height="104"/>
+                                        <rect key="frame" x="0.0" y="207.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnC-2Z-CTu">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
@@ -113,7 +113,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbB-Tg-u1X" userLabel="5" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="104" y="335.5" width="103.5" height="103.5"/>
+                                        <rect key="frame" x="104" y="104" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-rw-JcX">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -148,8 +148,8 @@
                                             <outlet property="titleLabel" destination="GQu-rw-JcX" id="Zf8-yF-s9b"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQt-PL-626" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="541.5" width="104" height="104"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQt-PL-626" userLabel="/" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="207" y="312" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jQ-zC-qgo">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
@@ -177,7 +177,7 @@
                                             <constraint firstItem="tGC-BB-WZQ" firstAttribute="top" secondItem="VQt-PL-626" secondAttribute="top" id="xKI-ZE-AuR"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="value"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="dividing"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="9SF-CQ-Fqw"/>
@@ -185,16 +185,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-73-wy6" userLabel="2" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="104" y="439" width="103" height="103"/>
+                                        <rect key="frame" x="104" y="207.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-hn-my2">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVv-e8-ofK">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="fCP-73-wy6" eventType="touchUpInside" id="nMo-78-FTa"/>
                                                 </connections>
@@ -221,7 +221,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWl-Aw-2qy" userLabel="3" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="438" width="103.5" height="103.5"/>
+                                        <rect key="frame" x="208" y="208" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-81-SsL">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -257,7 +257,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-9e-Uyr" userLabel="4" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="334.5" width="103.5" height="103.5"/>
+                                        <rect key="frame" x="0.0" y="104" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-uv-waL">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -292,17 +292,17 @@
                                             <outlet property="titleLabel" destination="XUC-uv-waL" id="9be-pe-9m1"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-oT-3bv" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-90.5" width="30" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-oT-3bv" userLabel="7" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv8-Ml-RqZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv8-Ml-RqZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-Vm-gkN">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-Vm-gkN">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="RmT-oT-3bv" eventType="touchUpInside" id="Sa8-eT-tfC"/>
                                                 </connections>
@@ -313,6 +313,7 @@
                                             <constraint firstItem="6iQ-Vm-gkN" firstAttribute="top" secondItem="RmT-oT-3bv" secondAttribute="top" id="8bv-rQ-dWy"/>
                                             <constraint firstItem="bv8-Ml-RqZ" firstAttribute="top" secondItem="RmT-oT-3bv" secondAttribute="top" id="EEa-uP-3Xl"/>
                                             <constraint firstAttribute="bottom" secondItem="6iQ-Vm-gkN" secondAttribute="bottom" id="QN5-fe-bl2"/>
+                                            <constraint firstAttribute="width" secondItem="RmT-oT-3bv" secondAttribute="height" multiplier="1:1" id="Sim-Ff-i83"/>
                                             <constraint firstAttribute="trailing" secondItem="6iQ-Vm-gkN" secondAttribute="trailing" id="V0V-f4-bRl"/>
                                             <constraint firstItem="6iQ-Vm-gkN" firstAttribute="leading" secondItem="RmT-oT-3bv" secondAttribute="leading" id="WcV-6o-vGs"/>
                                             <constraint firstAttribute="trailing" secondItem="bv8-Ml-RqZ" secondAttribute="trailing" id="dJ9-CB-pYs"/>
@@ -328,7 +329,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-m2-YZW" userLabel="6" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="207.5" y="334.5" width="103.5" height="103.5"/>
+                                        <rect key="frame" x="207.5" y="104.5" width="104" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-Pu-Epd">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
@@ -363,17 +364,17 @@
                                             <outlet property="titleLabel" destination="xbM-Pu-Epd" id="jXB-Uj-s74"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-HT-p0f" userLabel="8" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-90.5" width="30" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-HT-p0f" userLabel="8" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="104" y="1" width="104" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Z-ZZ-Tmt">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Z-ZZ-Tmt">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-Kb-yeE">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-Kb-yeE">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="yL5-HT-p0f" eventType="touchUpInside" id="sph-Pz-QVm"/>
                                                 </connections>
@@ -389,6 +390,7 @@
                                             <constraint firstAttribute="bottom" secondItem="T7Z-ZZ-Tmt" secondAttribute="bottom" id="tax-Kp-HHL"/>
                                             <constraint firstAttribute="trailing" secondItem="T7Z-ZZ-Tmt" secondAttribute="trailing" id="wh7-3A-hYz"/>
                                             <constraint firstAttribute="bottom" secondItem="WeP-Kb-yeE" secondAttribute="bottom" id="ybA-9y-3DV"/>
+                                            <constraint firstAttribute="width" secondItem="yL5-HT-p0f" secondAttribute="height" multiplier="1:1" id="zdc-5F-Vvk"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="value"/>
@@ -398,17 +400,17 @@
                                             <outlet property="titleLabel" destination="T7Z-ZZ-Tmt" id="dVv-B8-n4S"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-NW-0VG" userLabel="9" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-90.5" width="30" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-NW-0VG" userLabel="9" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="208" y="1" width="104" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-YI-niZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-YI-niZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-xf-LSA">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-xf-LSA">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="ar4-NW-0VG" eventType="touchUpInside" id="Z0d-0B-sUq"/>
                                                 </connections>
@@ -423,6 +425,7 @@
                                             <constraint firstItem="pEQ-xf-LSA" firstAttribute="top" secondItem="ar4-NW-0VG" secondAttribute="top" id="Mam-nz-TWm"/>
                                             <constraint firstAttribute="bottom" secondItem="pEQ-xf-LSA" secondAttribute="bottom" id="RXC-aL-9aN"/>
                                             <constraint firstAttribute="bottom" secondItem="S4K-YI-niZ" secondAttribute="bottom" id="U2D-ox-Zg5"/>
+                                            <constraint firstAttribute="width" secondItem="ar4-NW-0VG" secondAttribute="height" multiplier="1:1" id="dXB-J3-E9P"/>
                                             <constraint firstAttribute="trailing" secondItem="pEQ-xf-LSA" secondAttribute="trailing" id="ebn-Ks-cxu"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -433,17 +436,17 @@
                                             <outlet property="titleLabel" destination="S4K-YI-niZ" id="mpZ-Le-cEE"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wey-72-9uS" userLabel="X" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-90.5" width="30" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wey-72-9uS" userLabel="X" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="312" y="0.0" width="102" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUK-ko-dZs">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUK-ko-dZs">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="104"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7G7-fA-94e">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7G7-fA-94e">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="104"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="Wey-72-9uS" eventType="touchUpInside" id="fsh-1z-9Za"/>
                                                 </connections>
@@ -461,24 +464,24 @@
                                             <constraint firstAttribute="bottom" secondItem="wUK-ko-dZs" secondAttribute="bottom" id="yi1-do-piG"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="value"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="multiplying"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="D4J-SU-0CU"/>
                                             <outlet property="titleLabel" destination="wUK-ko-dZs" id="Yr9-QK-ak0"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tS-oA-3TD" userLabel="-" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-90.5" width="30" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tS-oA-3TD" userLabel="-" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="311.5" y="104" width="102.5" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-pI-eSj">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-pI-eSj">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulE-uc-uUr">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulE-uc-uUr">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
                                                 <connections>
                                                     <action selector="sendAction:" destination="5tS-oA-3TD" eventType="touchUpInside" id="t2R-57-XtO"/>
                                                 </connections>
@@ -496,15 +499,50 @@
                                             <constraint firstAttribute="bottom" secondItem="HkW-pI-eSj" secondAttribute="bottom" id="zVq-Bf-p0S"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="value"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="subtracting"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="2vV-05-cBz"/>
                                             <outlet property="titleLabel" destination="HkW-pI-eSj" id="JEz-pB-fTP"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-lM-mhp" userLabel="+" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="311.5" y="208" width="102.5" height="104"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-4C-UvX">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-1j-9FQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="104"/>
+                                                <connections>
+                                                    <action selector="sendAction:" destination="YX8-lM-mhp" eventType="touchUpInside" id="98Z-Sr-j9y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WM5-1j-9FQ" secondAttribute="trailing" id="4v9-7r-7b4"/>
+                                            <constraint firstItem="WM5-1j-9FQ" firstAttribute="top" secondItem="YX8-lM-mhp" secondAttribute="top" id="6df-ut-7oF"/>
+                                            <constraint firstAttribute="bottom" secondItem="WM5-1j-9FQ" secondAttribute="bottom" id="QzL-Fs-ShA"/>
+                                            <constraint firstItem="5J7-4C-UvX" firstAttribute="top" secondItem="YX8-lM-mhp" secondAttribute="top" id="hM6-bh-sME"/>
+                                            <constraint firstItem="5J7-4C-UvX" firstAttribute="leading" secondItem="YX8-lM-mhp" secondAttribute="leading" id="hmc-0z-W62"/>
+                                            <constraint firstAttribute="trailing" secondItem="5J7-4C-UvX" secondAttribute="trailing" id="iK1-Ia-UhQ"/>
+                                            <constraint firstItem="WM5-1j-9FQ" firstAttribute="leading" secondItem="YX8-lM-mhp" secondAttribute="leading" id="n1M-ue-aMy"/>
+                                            <constraint firstAttribute="bottom" secondItem="5J7-4C-UvX" secondAttribute="bottom" id="obY-xS-bBL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="add"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="s5t-ZQ-zNh"/>
+                                            <outlet property="titleLabel" destination="5J7-4C-UvX" id="uDN-gV-tnN"/>
+                                        </connections>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4i-n4-mS3" userLabel="=" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="311" y="542" width="103" height="103.5"/>
+                                        <rect key="frame" x="311" y="312" width="103" height="103.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsT-AS-c3P">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="103.5"/>
@@ -538,8 +576,8 @@
                                             <outlet property="titleLabel" destination="qsT-AS-c3P" id="PJg-aM-QNk"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qX3-fm-QX5">
-                                        <rect key="frame" x="0.0" y="-90.5" width="1" height="0.0"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qX3-fm-QX5">
+                                        <rect key="frame" x="104" y="0.0" width="1" height="312"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="KBy-Zd-ESy"/>
@@ -551,8 +589,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Cw-RpM">
-                                        <rect key="frame" x="207" y="-90.5" width="1" height="0.0"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Cw-RpM">
+                                        <rect key="frame" x="208" y="0.0" width="1" height="415.5"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="iCe-WC-oUh"/>
@@ -564,8 +602,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L65-80-WMP">
-                                        <rect key="frame" x="0.0" y="-90.5" width="1" height="0.0"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L65-80-WMP">
+                                        <rect key="frame" x="311.5" y="0.0" width="1" height="415.5"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="3Lm-1F-fPX"/>
@@ -577,8 +615,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-GZ-cVj">
-                                        <rect key="frame" x="0.0" y="-90.5" width="0.0" height="1"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-GZ-cVj">
+                                        <rect key="frame" x="0.0" y="104" width="414" height="1"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="416" id="DL8-xm-zIR"/>
@@ -592,23 +630,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8i-si-aBx">
-                                        <rect key="frame" x="0.0" y="-90.5" width="0.0" height="1"/>
-                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="7x8-M8-e1G"/>
-                                            <constraint firstAttribute="height" constant="416" id="Xff-o0-2Ic"/>
-                                            <constraint firstAttribute="height" constant="1" id="has-eI-rv8"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="7x8-M8-e1G"/>
-                                                <exclude reference="Xff-o0-2Ic"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YR6-kt-lId">
-                                        <rect key="frame" x="0.0" y="-90.5" width="0.0" height="1"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YR6-kt-lId">
+                                        <rect key="frame" x="0.0" y="208" width="414" height="1"/>
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Fdl-Oo-Ihb"/>
@@ -622,79 +645,95 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-lM-mhp" userLabel="+" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="438.5" width="103.5" height="103.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-4C-UvX">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-1j-9FQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
-                                                <connections>
-                                                    <action selector="sendAction:" destination="YX8-lM-mhp" eventType="touchUpInside" id="98Z-Sr-j9y"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8i-si-aBx">
+                                        <rect key="frame" x="0.0" y="310.5" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="WM5-1j-9FQ" secondAttribute="trailing" id="4v9-7r-7b4"/>
-                                            <constraint firstItem="WM5-1j-9FQ" firstAttribute="top" secondItem="YX8-lM-mhp" secondAttribute="top" id="6df-ut-7oF"/>
-                                            <constraint firstAttribute="bottom" secondItem="WM5-1j-9FQ" secondAttribute="bottom" id="QzL-Fs-ShA"/>
-                                            <constraint firstItem="5J7-4C-UvX" firstAttribute="top" secondItem="YX8-lM-mhp" secondAttribute="top" id="hM6-bh-sME"/>
-                                            <constraint firstItem="5J7-4C-UvX" firstAttribute="leading" secondItem="YX8-lM-mhp" secondAttribute="leading" id="hmc-0z-W62"/>
-                                            <constraint firstAttribute="trailing" secondItem="5J7-4C-UvX" secondAttribute="trailing" id="iK1-Ia-UhQ"/>
-                                            <constraint firstItem="WM5-1j-9FQ" firstAttribute="leading" secondItem="YX8-lM-mhp" secondAttribute="leading" id="n1M-ue-aMy"/>
-                                            <constraint firstAttribute="bottom" secondItem="5J7-4C-UvX" secondAttribute="bottom" id="obY-xS-bBL"/>
+                                            <constraint firstAttribute="width" constant="1" id="7x8-M8-e1G"/>
+                                            <constraint firstAttribute="height" constant="416" id="Xff-o0-2Ic"/>
+                                            <constraint firstAttribute="height" constant="1" id="has-eI-rv8"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonType" value="add"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="s5t-ZQ-zNh"/>
-                                            <outlet property="titleLabel" destination="5J7-4C-UvX" id="uDN-gV-tnN"/>
-                                        </connections>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7x8-M8-e1G"/>
+                                                <exclude reference="Xff-o0-2Ic"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hua-5H-OA0" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="0dh-Ef-y2H"/>
+                                    <constraint firstItem="u4i-n4-mS3" firstAttribute="top" secondItem="h8i-si-aBx" secondAttribute="bottom" id="3eb-UQ-UCz"/>
+                                    <constraint firstItem="YR6-kt-lId" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="3wo-Nh-aZh"/>
+                                    <constraint firstItem="ar4-NW-0VG" firstAttribute="leading" secondItem="yL5-HT-p0f" secondAttribute="trailing" id="4xG-c3-WpS"/>
+                                    <constraint firstItem="RmT-oT-3bv" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="54H-CI-iRj"/>
+                                    <constraint firstItem="h8i-si-aBx" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="55r-UM-QrS"/>
+                                    <constraint firstItem="RmT-oT-3bv" firstAttribute="top" secondItem="NTx-dr-431" secondAttribute="top" id="6wn-Td-Ia3"/>
                                     <constraint firstAttribute="trailing" secondItem="u4i-n4-mS3" secondAttribute="trailing" id="9wL-vb-PrD"/>
                                     <constraint firstItem="YX8-lM-mhp" firstAttribute="height" secondItem="u4i-n4-mS3" secondAttribute="height" id="AQR-GN-zhq"/>
                                     <constraint firstItem="fCP-73-wy6" firstAttribute="top" secondItem="sbB-Tg-u1X" secondAttribute="bottom" id="DQR-da-vjG"/>
+                                    <constraint firstItem="Wey-72-9uS" firstAttribute="leading" secondItem="ar4-NW-0VG" secondAttribute="trailing" id="DZl-Yn-dy4"/>
                                     <constraint firstItem="VOU-Cw-RpM" firstAttribute="leading" secondItem="F6V-jv-dgM" secondAttribute="trailing" id="EYh-U8-kJt"/>
+                                    <constraint firstItem="VOU-Cw-RpM" firstAttribute="leading" secondItem="yL5-HT-p0f" secondAttribute="trailing" id="Eoh-e2-SOp"/>
+                                    <constraint firstItem="8nb-GZ-cVj" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="G9c-PI-Z5T"/>
                                     <constraint firstItem="YX8-lM-mhp" firstAttribute="leading" secondItem="LWl-Aw-2qy" secondAttribute="trailing" id="GBo-gq-OOZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wey-72-9uS" secondAttribute="trailing" id="H6L-Eu-tjR"/>
+                                    <constraint firstItem="qX3-fm-QX5" firstAttribute="top" secondItem="NTx-dr-431" secondAttribute="top" id="HAw-yP-3at"/>
+                                    <constraint firstItem="0NW-m2-YZW" firstAttribute="top" secondItem="yL5-HT-p0f" secondAttribute="bottom" id="HUv-b0-wdS"/>
+                                    <constraint firstItem="5tS-oA-3TD" firstAttribute="top" secondItem="Wey-72-9uS" secondAttribute="bottom" id="MBI-gr-aSB"/>
                                     <constraint firstItem="hua-5H-OA0" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="Mxp-IJ-JqC"/>
                                     <constraint firstItem="hua-5H-OA0" firstAttribute="top" secondItem="LBi-9e-Uyr" secondAttribute="bottom" id="OaY-nl-feE"/>
                                     <constraint firstItem="LBi-9e-Uyr" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="Pql-hj-ZgW"/>
                                     <constraint firstItem="u4i-n4-mS3" firstAttribute="leading" secondItem="VQt-PL-626" secondAttribute="trailing" id="QJZ-ay-3Sc"/>
+                                    <constraint firstItem="L65-80-WMP" firstAttribute="top" secondItem="NTx-dr-431" secondAttribute="top" id="S1U-Oq-GUo"/>
+                                    <constraint firstAttribute="trailing" secondItem="8nb-GZ-cVj" secondAttribute="trailing" id="Sjz-me-YFI"/>
+                                    <constraint firstAttribute="bottom" secondItem="VOU-Cw-RpM" secondAttribute="bottom" id="UeA-8l-pS0"/>
+                                    <constraint firstItem="0NW-m2-YZW" firstAttribute="top" secondItem="ar4-NW-0VG" secondAttribute="bottom" id="VVT-2D-ZGm"/>
                                     <constraint firstItem="VQt-PL-626" firstAttribute="leading" secondItem="F6V-jv-dgM" secondAttribute="trailing" id="WS4-CP-W1q"/>
                                     <constraint firstItem="sbB-Tg-u1X" firstAttribute="leading" secondItem="LBi-9e-Uyr" secondAttribute="trailing" id="Wb7-cY-bOZ"/>
                                     <constraint firstItem="LWl-Aw-2qy" firstAttribute="leading" secondItem="fCP-73-wy6" secondAttribute="trailing" id="YKk-Eh-JPm"/>
+                                    <constraint firstItem="qX3-fm-QX5" firstAttribute="leading" secondItem="RmT-oT-3bv" secondAttribute="trailing" id="YVh-ur-nZF"/>
                                     <constraint firstItem="0NW-m2-YZW" firstAttribute="leading" secondItem="sbB-Tg-u1X" secondAttribute="trailing" id="Z0A-Xp-H6o"/>
+                                    <constraint firstItem="YX8-lM-mhp" firstAttribute="top" secondItem="5tS-oA-3TD" secondAttribute="bottom" id="ZJM-Nd-YPp"/>
+                                    <constraint firstItem="YR6-kt-lId" firstAttribute="top" secondItem="5tS-oA-3TD" secondAttribute="bottom" id="ZrX-Ru-0RZ"/>
                                     <constraint firstItem="F6V-jv-dgM" firstAttribute="height" secondItem="hua-5H-OA0" secondAttribute="height" id="bOQ-Uo-ZHd"/>
                                     <constraint firstItem="F6V-jv-dgM" firstAttribute="leading" secondItem="NTx-dr-431" secondAttribute="leading" id="biF-95-gZD"/>
                                     <constraint firstAttribute="trailing" secondItem="YX8-lM-mhp" secondAttribute="trailing" id="byt-bN-QdB"/>
                                     <constraint firstItem="LBi-9e-Uyr" firstAttribute="width" secondItem="NTx-dr-431" secondAttribute="width" multiplier="1/4" id="cB0-vJ-yni"/>
+                                    <constraint firstAttribute="bottom" secondItem="L65-80-WMP" secondAttribute="bottom" id="cJL-Nn-V19"/>
                                     <constraint firstItem="F6V-jv-dgM" firstAttribute="top" secondItem="hua-5H-OA0" secondAttribute="bottom" id="cal-5J-nm3"/>
                                     <constraint firstItem="u4i-n4-mS3" firstAttribute="height" secondItem="F6V-jv-dgM" secondAttribute="height" id="dO7-kF-Orp"/>
                                     <constraint firstItem="VQt-PL-626" firstAttribute="top" secondItem="LWl-Aw-2qy" secondAttribute="bottom" id="dbQ-yk-FvH"/>
+                                    <constraint firstItem="8nb-GZ-cVj" firstAttribute="top" secondItem="Wey-72-9uS" secondAttribute="bottom" id="dfc-z4-9P4"/>
                                     <constraint firstAttribute="bottom" secondItem="F6V-jv-dgM" secondAttribute="bottom" id="e5W-Oz-fAD"/>
+                                    <constraint firstItem="5tS-oA-3TD" firstAttribute="width" secondItem="0NW-m2-YZW" secondAttribute="width" id="f2G-k7-Awu"/>
                                     <constraint firstAttribute="bottom" secondItem="u4i-n4-mS3" secondAttribute="bottom" id="fJ5-uu-qVW"/>
                                     <constraint firstItem="u4i-n4-mS3" firstAttribute="top" secondItem="YX8-lM-mhp" secondAttribute="bottom" id="i8E-7j-Hwx"/>
+                                    <constraint firstItem="F6V-jv-dgM" firstAttribute="top" secondItem="qX3-fm-QX5" secondAttribute="bottom" id="k5i-Bo-7xY"/>
+                                    <constraint firstAttribute="trailing" secondItem="YR6-kt-lId" secondAttribute="trailing" id="nQd-CP-Hdl"/>
                                     <constraint firstItem="LWl-Aw-2qy" firstAttribute="top" secondItem="0NW-m2-YZW" secondAttribute="bottom" id="ntn-PJ-Vd9"/>
                                     <constraint firstItem="fCP-73-wy6" firstAttribute="leading" secondItem="hua-5H-OA0" secondAttribute="trailing" id="nuF-6C-ieh"/>
+                                    <constraint firstItem="yL5-HT-p0f" firstAttribute="leading" secondItem="RmT-oT-3bv" secondAttribute="trailing" id="oD0-4u-ZR0"/>
+                                    <constraint firstItem="L65-80-WMP" firstAttribute="leading" secondItem="0NW-m2-YZW" secondAttribute="trailing" id="oPc-ks-HUg"/>
+                                    <constraint firstItem="LBi-9e-Uyr" firstAttribute="top" secondItem="RmT-oT-3bv" secondAttribute="bottom" id="oTH-4m-4aB"/>
+                                    <constraint firstItem="5tS-oA-3TD" firstAttribute="height" secondItem="0NW-m2-YZW" secondAttribute="height" id="pkC-gB-BO7"/>
                                     <constraint firstItem="F6V-jv-dgM" firstAttribute="top" secondItem="fCP-73-wy6" secondAttribute="bottom" id="sGL-U5-vX4"/>
                                     <constraint firstItem="sbB-Tg-u1X" firstAttribute="width" secondItem="NTx-dr-431" secondAttribute="width" multiplier="1/4" id="tUa-FL-cJ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="h8i-si-aBx" secondAttribute="trailing" id="vBf-Kj-pUz"/>
+                                    <constraint firstItem="5tS-oA-3TD" firstAttribute="leading" secondItem="0NW-m2-YZW" secondAttribute="trailing" id="w9y-Xh-CME"/>
+                                    <constraint firstItem="VOU-Cw-RpM" firstAttribute="top" secondItem="NTx-dr-431" secondAttribute="top" id="xCx-y4-PQs"/>
+                                    <constraint firstItem="Wey-72-9uS" firstAttribute="height" secondItem="ar4-NW-0VG" secondAttribute="height" id="xNX-yW-soa"/>
                                     <constraint firstItem="F6V-jv-dgM" firstAttribute="top" secondItem="fCP-73-wy6" secondAttribute="bottom" id="xYs-qV-0t1"/>
                                     <constraint firstItem="YR6-kt-lId" firstAttribute="top" secondItem="hua-5H-OA0" secondAttribute="bottom" id="xpx-95-lee"/>
                                     <constraint firstAttribute="bottom" secondItem="VQt-PL-626" secondAttribute="bottom" id="yON-H4-LHz"/>
+                                    <constraint firstAttribute="trailing" secondItem="5tS-oA-3TD" secondAttribute="trailing" id="zhl-sf-zIP"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="EYh-U8-kJt"/>
                                         <exclude reference="xpx-95-lee"/>
+                                        <exclude reference="f2G-k7-Awu"/>
                                         <exclude reference="bOQ-Uo-ZHd"/>
                                         <exclude reference="sGL-U5-vX4"/>
                                     </mask>
@@ -706,6 +745,7 @@
                             <constraint firstItem="xQD-2G-iXi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Ea-vZ-8VI"/>
                             <constraint firstItem="F6V-jv-dgM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="5my-nB-giT"/>
                             <constraint firstAttribute="trailing" secondItem="NTx-dr-431" secondAttribute="trailing" id="GFG-3l-Fum"/>
+                            <constraint firstItem="ar4-NW-0VG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="M44-Yd-d6W"/>
                             <constraint firstItem="NTx-dr-431" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M7M-YO-evh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NTx-dr-431" secondAttribute="bottom" id="NkD-Dp-2vE"/>
                             <constraint firstAttribute="trailing" secondItem="xQD-2G-iXi" secondAttribute="trailing" id="Rej-gn-Q7k"/>
@@ -714,7 +754,9 @@
                             <constraint firstItem="0NW-m2-YZW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="d63-0F-wNy"/>
                             <constraint firstItem="LWl-Aw-2qy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="ezk-mx-mtR"/>
                             <constraint firstItem="VQt-PL-626" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="hcx-e7-c1S"/>
+                            <constraint firstItem="RmT-oT-3bv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="m8v-z7-vfc"/>
                             <constraint firstItem="NTx-dr-431" firstAttribute="top" secondItem="xQD-2G-iXi" secondAttribute="bottom" id="rwS-zd-zgs"/>
+                            <constraint firstItem="yL5-HT-p0f" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="tJc-LY-xMG"/>
                             <constraint firstItem="fCP-73-wy6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="x0m-qS-e8H"/>
                         </constraints>
                     </view>
@@ -725,7 +767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="370"/>
+            <point key="canvasLocation" x="349" y="370"/>
         </scene>
     </scenes>
 </document>

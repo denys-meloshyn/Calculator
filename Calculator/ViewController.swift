@@ -36,7 +36,7 @@ class ViewController: UIViewController, CalculatorButtonDelegate {
             CalculatorManager.shareInstance.appendValue(sender.titleLabel?.text)
             break
             
-        case ActionType.Add:
+        case ActionType.Add, ActionType.Subtracting, ActionType.Multiplying, ActionType.Dividing:
             CalculatorManager.shareInstance.lastEnterCommand = sender.type
             break
             
