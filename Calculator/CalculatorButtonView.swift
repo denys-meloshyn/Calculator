@@ -19,10 +19,10 @@ enum ActionType: String {
 };
 
 @objc public protocol CalculatorButtonDelegate {
-    func action(sender: CalculatorButtonView)
+    func action(_ sender: CalculatorButtonView)
 }
 
-public class CalculatorButtonView: UIView {
+open class CalculatorButtonView: UIView {
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet weak var delegate: CalculatorButtonDelegate?
     
@@ -30,13 +30,13 @@ public class CalculatorButtonView: UIView {
     
     @IBInspectable var buttonType: String = "" {
         willSet {
-            if let newValue = ActionType(rawValue: newValue.lowercaseString ?? ActionType.Value.rawValue) {
+            if let newValue = ActionType(rawValue: newValue.lowercased() ) {
                 self.type = newValue
             }
         }
     }
     
-    @IBAction private func sendAction(sender: UIButton) {
+    @IBAction fileprivate func sendAction(_ sender: UIButton) {
         self.delegate?.action(self)
     }
 }

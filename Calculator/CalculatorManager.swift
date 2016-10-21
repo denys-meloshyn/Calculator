@@ -14,44 +14,44 @@ class CalculatorManager: NSObject {
     var lastEnterCommand = ActionType.None {
         didSet {
             // Avoid entering new math command if we have error
-            if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError {
+            if let calculationError = self.calculationError , calculationError != NSDecimalNumber.CalculationError.noError {
                 lastEnterCommand = ActionType.None
             }
         }
     }
-    var calculationError: NSCalculationError?
+    var calculationError: NSDecimalNumber.CalculationError?
     
-    private(set) internal var secondEnteredValue: NSDecimalNumber?
-    private(set) internal var result = NSDecimalNumber.zero()
+    fileprivate(set) internal var secondEnteredValue: NSDecimalNumber?
+    fileprivate(set) internal var result = NSDecimalNumber.zero
     
-    private override init() {
+    fileprivate override init() {
     }
     
     internal func reset() {
         self.lastEnterCommand = ActionType.None
         self.calculationError = nil
-        self.result = NSDecimalNumber.zero()
+        self.result = NSDecimalNumber.zero
         self.secondEnteredValue = nil
     }
     
-    func add(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
+    func add(_ firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         return executeMathOperation(firstValue, secondValue: secondValue, operation: NSDecimalAdd)
     }
     
-    func subtracting(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
+    func subtracting(_ firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         return executeMathOperation(firstValue, secondValue: secondValue, operation: NSDecimalSubtract)
     }
     
-    func multiplying(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
+    func multiplying(_ firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         return executeMathOperation(firstValue, secondValue: secondValue, operation: NSDecimalMultiply)
     }
     
-    func dividing(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
+    func dividing(_ firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?) -> NSDecimalNumber {
         return executeMathOperation(firstValue, secondValue: secondValue, operation: NSDecimalDivide)
     }
     
-    func executeMathOperation(firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?, operation: (UnsafeMutablePointer<NSDecimal>, UnsafePointer<NSDecimal>, UnsafePointer<NSDecimal>, NSRoundingMode) -> NSCalculationError) -> NSDecimalNumber {
-        var result = NSDecimalNumber.zero()
+    func executeMathOperation(_ firstValue: NSDecimalNumber?, secondValue: NSDecimalNumber?, operation: (UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, UnsafePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError) -> NSDecimalNumber {
+        var result = NSDecimalNumber.zero
         
         // Check if first parameter is exist
         if let firstValue = firstValue {
@@ -63,19 +63,19 @@ class CalculatorManager: NSObject {
                 var decimalReuslt = self.result.decimalValue
                 
                 // Try to execute command and check error status
-                self.calculationError = operation(&decimalReuslt, &first, &second, NSRoundingMode.RoundPlain)
+                self.calculationError = operation(&decimalReuslt, &first, &second, NSDecimalNumber.RoundingMode.plain)
                 
                 if let calculationError = self.calculationError {
                     switch calculationError {
-                    case NSCalculationError.NoError:
-                        self.secondEnteredValue = NSDecimalNumber.zero()
+                    case NSDecimalNumber.CalculationError.noError:
+                        self.secondEnteredValue = NSDecimalNumber.zero
                         self.lastEnterCommand = ActionType.None
                         
                         result = NSDecimalNumber(decimal: decimalReuslt)
                         break;
                         
                     default:
-                        self.result = NSDecimalNumber.zero()
+                        self.result = NSDecimalNumber.zero
                         break;
                     }
                 }
@@ -97,7 +97,7 @@ class CalculatorManager: NSObject {
             
         case ActionType.Multiplying:
             let tmpResult = self.multiplying(self.result, secondValue: self.secondEnteredValue)
-            if let calculationError = self.calculationError where calculationError == NSCalculationError.NoError {
+            if let calculationError = self.calculationError , calculationError == NSDecimalNumber.CalculationError.noError {
                 self.result = tmpResult
             }
             
@@ -115,7 +115,7 @@ class CalculatorManager: NSObject {
         self.lastEnterCommand = ActionType.None
     }
     
-    func appendValue(value: String?) {
+    func appendValue(_ value: String?) {
         if let value = value {
             var resultStr = ""
             if self.lastEnterCommand == ActionType.None {
@@ -123,7 +123,7 @@ class CalculatorManager: NSObject {
                 self.calculationError = nil
             }
             else {
-                if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError{
+                if let calculationError = self.calculationError , calculationError != NSDecimalNumber.CalculationError.noError{
                     self.lastEnterCommand = ActionType.None;
                     self.secondEnteredValue = nil;
                 }
@@ -146,7 +146,7 @@ class CalculatorManager: NSObject {
     func string() -> String {
         var result = "0"
         
-        if let calculationError = self.calculationError where calculationError != NSCalculationError.NoError {
+        if let calculationError = self.calculationError , calculationError != NSDecimalNumber.CalculationError.noError {
             result = "Error"
         }
         else if self.lastEnterCommand == ActionType.None {
