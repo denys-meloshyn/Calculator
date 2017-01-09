@@ -1,6 +1,3 @@
 language: objective-c
-script: 
-  - xcode_project Calculator.xcodeproj 
-  - xcode_scheme Calculator
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+xcode_project: Calculator.xcodeproj # path to your xcodeproj folder
+xcode_scheme: CalculatorTests
