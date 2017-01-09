@@ -1,4 +1,4 @@
 language: objective-c
-script: xcodebuild -project Calculator.xcodeproj -scheme Calculator -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 after_success:
   - bash <(curl -s https://codecov.io/bash)
