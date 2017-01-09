@@ -1,5 +1,5 @@
 # Calculator
-
+[![Coverage Status](https://coveralls.io/repos/github/ned1988/Calculator/badge.svg?branch=master)](https://coveralls.io/github/ned1988/Calculator?branch=master)
 ## Task:
 - Create a simple calculator, that can "+", "-", "*", "/", "clear", and "=" 
 - Model, logic and UI must be separated
