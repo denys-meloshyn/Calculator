@@ -1,6 +1,6 @@
 language: objective-c
 
-script: xcodebuild test -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES -enableCodeCoverage YES
+script: xcodebuild test -project Calculator.xcodeproj -scheme CalculatorTests -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES -enableCodeCoverage YES
 
 #script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 
