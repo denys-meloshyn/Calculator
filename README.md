@@ -1,6 +1,4 @@
 # Calculator
-[![Coverage Status](https://coveralls.io/repos/github/ned1988/Calculator/badge.svg?branch=master)](https://coveralls.io/github/ned1988/Calculator?branch=master)
-
 [![codecov](https://codecov.io/gh/ned1988/Calculator/branch/master/graph/badge.svg)](https://codecov.io/gh/ned1988/Calculator)
 
 ## Task:
