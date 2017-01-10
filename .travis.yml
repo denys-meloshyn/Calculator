@@ -4,4 +4,5 @@ script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk ip
 #  - xctool -project Calculator.xcodeproj -scheme CalculatorTests build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 osx_image: xcode8.2
 after_success:
+  - slather
   - bash <(curl -s https://codecov.io/bash)
