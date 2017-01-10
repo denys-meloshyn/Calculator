@@ -1,6 +1,6 @@
 # .slather.yml
 
-coverage_service: cobertura_xml
+coverage_service: coveralls
 xcodeproj: ./Calculator.xcodeproj
 scheme: Calculator
-output_directory: ./test-reports
+# output_directory: ./test-reports
