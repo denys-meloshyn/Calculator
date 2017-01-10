@@ -1,7 +1,11 @@
 language: objective-c
-# script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-script: 
-  - xctool -project Calculator.xcodeproj -scheme CalculatorTests build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
+script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
+#script: xcodebuild -project Calculator.xcodeproj -scheme CalculatorTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
+# script: 
+#  - xctool -project Calculator.xcodeproj -scheme CalculatorTests build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 osx_image: xcode8.2
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)  -J 'Calculator'
