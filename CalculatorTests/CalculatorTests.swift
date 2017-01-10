@@ -51,7 +51,7 @@ class CalculatorTests: XCTestCase {
         let a = NSDecimalNumber.maximum
         let b = NSDecimalNumber(value: 1 as Int)
         
-        CalculatorManager.shareInstance.add(a, secondValue: b)
+        _ = CalculatorManager.shareInstance.add(a, secondValue: b)
         XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSDecimalNumber.CalculationError.noError)
     }
     
@@ -85,7 +85,7 @@ class CalculatorTests: XCTestCase {
         let a = NSDecimalNumber.minimum
         let b = NSDecimalNumber(value: 1 as Int)
         
-        CalculatorManager.shareInstance.subtracting(a, secondValue: b)
+        _ = CalculatorManager.shareInstance.subtracting(a, secondValue: b)
         XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSDecimalNumber.CalculationError.noError)
     }
     
@@ -155,7 +155,7 @@ class CalculatorTests: XCTestCase {
         let a = NSDecimalNumber(value: 6 as Int)
         let b = NSDecimalNumber(value: 0 as Int)
         
-        CalculatorManager.shareInstance.dividing(a, secondValue: b)
+        _ = CalculatorManager.shareInstance.dividing(a, secondValue: b)
         
         XCTAssertNotEqual(CalculatorManager.shareInstance.calculationError, NSDecimalNumber.CalculationError.noError)
     }
