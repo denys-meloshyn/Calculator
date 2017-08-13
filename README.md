@@ -14,3 +14,5 @@
 - add possibility to execute multiple arithmetic command in one line
 - add UI test
 - add more mathematical operators
+
+
