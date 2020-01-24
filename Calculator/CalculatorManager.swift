@@ -25,6 +25,8 @@ class CalculatorManager: NSObject {
     fileprivate(set) internal var result = NSDecimalNumber.zero
     
     fileprivate override init() {
+        
+        
     }
     
     internal func reset() {
