@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CalculatorManager: NSObject {
     static let shareInstance = CalculatorManager()
     
